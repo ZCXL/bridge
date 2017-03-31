@@ -24,6 +24,8 @@ namespace bridge {
 
         jclass _clazz;
         jobject _object;
+	public:
+		virtual std::string getClassName();
     };
 }
 #endif //BRIDGE_BRIDGE_OBJECT_H

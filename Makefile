@@ -1,7 +1,7 @@
 PWD = $(shell pwd)
 CXX := g++
 LINKER := g++
-CXXFLAGS := -pipe -Wall -O2 -g -fPIC
+CXXFLAGS := -pipe -Wall -O -g -fPIC
 LIBS :=
 INCLUDE :=
 LINKFLAGS := -fPIC -shared -g
@@ -20,6 +20,7 @@ DEP_INCPATH = -I$(JAVA_PATH)/include/ -I$(JAVA_PATH)/include/linux/
 DEP_LDFLAGS = -L$(JAVA_PATH)/jre/lib/amd64/server/
 DEP_LDLIBS = -ljvm
 INCPATH = -I src/
+INSTALL_PATH = /usr/local/include/bridge
 default:lib/libbridge.so lib/libbridge.a
 	cp src/bridge.h include/
 	cp src/bridge_conf.h include/
@@ -48,7 +49,9 @@ all:clean default
 
 install:
 	cp lib/libbridge.so /usr/local/lib/
-	cp include/* /usr/local/include/
+	rm -rf $(INSTALL_PATH)
+	mkdir $(INSTALL_PATH)
+	cp include/* $(INSTALL_PATH)
 
 clean:
 	rm src/*.o
