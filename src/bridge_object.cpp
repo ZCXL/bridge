@@ -34,4 +34,12 @@ namespace bridge {
 	std::string BridgeObject::getClassName() {
 		return _class_name;
 	}
+
+	jclass BridgeObject::getClass()const {
+		return _clazz;
+	}
+
+	JNIEnv* BridgeObject::getEnv()const {
+		return _env;
+	}
 }

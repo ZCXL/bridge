@@ -1,5 +1,5 @@
 //
-// Created by �쳬 on 2017/3/16.
+// Created by zhuchao on 2017/3/16.
 //
 
 #ifndef BRIDGE_BRIDGE_H_H
@@ -10,7 +10,7 @@
 #define DEFINE_START_NAMESPACE() \
     namespace java {
 #define DEFINE_CLASS(className) \
-    class J##className: public JavaObject {
+    class className: public JavaObject {
 #define DEFINE_END() \
     }                \
     ;
