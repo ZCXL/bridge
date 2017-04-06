@@ -27,6 +27,7 @@ namespace bridge {
 	public:
 		virtual std::string getClassName();
 		virtual jclass getClass()const;
+		virtual jobject getObject()const;
 		JNIEnv* getEnv()const;
     };
 }

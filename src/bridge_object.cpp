@@ -39,6 +39,10 @@ namespace bridge {
 		return _clazz;
 	}
 
+	jobject BridgeObject::getObject()const {
+		return _object;
+	}
+
 	JNIEnv* BridgeObject::getEnv()const {
 		return _env;
 	}
