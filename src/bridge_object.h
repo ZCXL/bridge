@@ -14,7 +14,7 @@ namespace bridge {
     public:
         BridgeObject();
         virtual ~BridgeObject();
-    protected:
+    public:
         BridgeObject(std::string class_name);
     protected:
         std::string _class_name;
@@ -24,6 +24,11 @@ namespace bridge {
 
         jclass _clazz;
         jobject _object;
+	public:
+		virtual std::string getClassName();
+		virtual jclass getClass()const;
+		virtual jobject getObject()const;
+		JNIEnv* getEnv()const;
     };
 }
 #endif //BRIDGE_BRIDGE_OBJECT_H
